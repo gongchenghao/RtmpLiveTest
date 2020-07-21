@@ -51,9 +51,9 @@ public class RESConfig {
         res.setVideoGOP(1); //关键帧间隔
         res.setVideoBufferQueueNum(5);
         res.setBitRate(2000000); //比特率
+
         res.setPrintDetailMsg(false);
-        res.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_BACK);
-//        res.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_FRONT); //默认前置摄像头
+        res.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_FRONT); //默认前置摄像头
         res.setBackCameraDirectionMode(DirectionMode.FLAG_DIRECTION_ROATATION_0);
         res.setFrontCameraDirectionMode(DirectionMode.FLAG_DIRECTION_ROATATION_0);
         return res;

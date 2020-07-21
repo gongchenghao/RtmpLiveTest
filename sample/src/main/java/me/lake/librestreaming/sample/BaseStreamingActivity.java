@@ -89,6 +89,7 @@ public class BaseStreamingActivity extends AppCompatActivity implements RESConne
         resConfig.setBitRate(750 * 1024);
         resConfig.setVideoFPS(20);
         resConfig.setVideoGOP(1);
+
         resConfig.setDefaultCamera(Camera.CameraInfo.CAMERA_FACING_FRONT);
         resConfig.setRenderingMode(RESConfig.RenderingMode.OpenGLES);
         int frontDirection, backDirection;
@@ -126,6 +127,9 @@ public class BaseStreamingActivity extends AppCompatActivity implements RESConne
             @Override
             public void handleMessage(Message msg) {
                 tv_speed.setText("byteSpeed=" + (resClient.getAVSpeed() / 1024) + ";drawFPS=" + resClient.getDrawFrameRate() + ";sendFPS=" + resClient.getSendFrameRate() + ";sendbufferfreepercent=" + resClient.getSendBufferFreePercent());
+//                Log.i("test111","byteSpeed=" + (resClient.getAVSpeed() / 1024) + ";drawFPS=" + resClient.getDrawFrameRate() + ";sendFPS=" + resClient.getSendFrameRate() + ";sendbufferfreepercent=" + resClient.getSendBufferFreePercent());
+//                Log.i("test111","fps:"+resConfig.getVideoFPS());
+//                Log.i("test111","gpo:"+resConfig.getVideoGOP());
                 sendEmptyMessageDelayed(0, 3000);
                 if (resClient.getSendBufferFreePercent() <= 0.05) {
                     Toast.makeText(BaseStreamingActivity.this, "sendbuffer is full,netspeed is low!", Toast.LENGTH_SHORT).show();
